@@ -1,0 +1,56 @@
+target-gas-limit=15000000
+poa-block-txs-selection-max-time=100
+
+# Node Configuration
+data-path = "C:/besu-network/node4/data"  # Directory for blockchain data for node 1
+genesis-file = "C:/besu-network/genesis.json"  # Path to genesis block file
+
+# Network Configuration
+network-id = 1337  # Unique identifier for the network
+
+# P2P Configuration
+p2p-host = "127.0.0.1"
+p2p-port = 30330  # P2P port for Node 1, default port 30303
+
+# JSON-RPC HTTP Configuration
+rpc-http-enabled = true # Enable RPC over HTTP for interacting with the node
+rpc-http-api = ["ETH", "NET", "WEB3", "ADMIN", "MINER", "CLIQUE"]  # Specify enabled APIs
+rpc-http-host = "127.0.0.1"
+rpc-http-port = 8575  # RPC port for Node 1
+
+# WebSocket Configuration
+rpc-ws-enabled = true
+rpc-ws-host = "127.0.0.1"  # Host for WebSocket service
+rpc-ws-port = 8576  # WebSocket port for Node 1
+
+# Allow any host to access RPC (use cautiously in production)
+host-allowlist = ["*"]
+
+# Bootnodes
+# Bootnodes (get public key from the above code)
+bootnodes = [
+  "enode://0fbc76b59a0b171407047929dd7ccc695d9e365a9f3c79fe13f4f9f3d2ebbef090c48915b33285273424beb79fc6bfec46d1c5bb8f429e148ed6ed537e905d4a@127.0.0.1:30303",
+  "enode://654865042095c6ad2dc0f42d85b6e4bf21907fc75d43c00973eeb5422bb5d8b86ddf71b816c212795bd1a2c514ecedb0823835d0a9b59c07143dba8b32988a52@127.0.0.1:30310",
+  "enode://2dc4925c1afcde7eac0fb37130268267119bde273eca4652737aa8e230c5a0c93112b707bd03bb17ca2f69a652c4388c49fecb3c0dfd0f3287676e6515e21472@127.0.0.1:30320",
+  "enode://9bc3409d94336f42c104f319b17bb064c305fc1950c7e608a39fc5d08d54de806c10fdcc9dc1f2eb5e616a72540e105759e96dcbbfad91869eebcb7aa0487b15@127.0.0.1:30330",
+  "enode://92c97a9ef5ccd2075bec001fbafc82e8af4fdd4893f9f941c29977bbfd2775158c8cdf2e7946521a0d8a7ea867fd40f25f062505dad12977d9fa2982b456f7c2@127.0.0.1:30340",
+  "enode://2a5bce2cef48b4a11066acaa5448f8c0441600b26ec0c91ee26140124e45937c4a8a1dda6e71a4baef4ce8b303352d832400bd256600f058c1e9860a10e84616@127.0.0.1:30350"
+]
+
+# Enable P2P TLS
+# p2p-tls-enabled = true  # Uncomment if TLS is required
+
+# Node Identity
+identity = "Node4"  # Identification for this node in the Client ID
+
+# Key-Value Storage
+key-value-storage =  "rocksdb"  # Options: "rocksdb" or "leveldb"
+
+# Enable permissioning with configuration files
+permissions-nodes-config-file = "C:/besu-network/permissions_config.toml"
+permissions-nodes-config-file-enabled = true
+permissions-accounts-config-file = "C:/besu-network/permissions_accounts_config.toml"
+permissions-accounts-config-file-enabled = true
+
+# Optional: Enable logging
+logging = "INFO"
