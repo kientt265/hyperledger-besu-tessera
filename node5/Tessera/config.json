@@ -1,0 +1,59 @@
+{
+    "useWhiteList": false,
+    "jdbc": {
+        "url": "jdbc:h2:./data/tessera1;MODE=Oracle;TRACE_LEVEL_SYSTEM_OUT=0",
+        "username": "sa",
+        "password": "",
+	"autoCreateTables": true
+    },
+    "serverConfigs": [
+        {
+            "app": "ThirdParty",
+            "serverAddress": "http://tessera-node5:9185",
+            "communicationType": "REST"
+        },
+        {
+            "app": "Q2T",
+            "serverAddress": "unix:/tmp/test.ipc",
+            "communicationType": "REST"
+        },
+        {
+            "app": "P2P",
+            "serverAddress": "http://tessera-node5:9105",
+            "sslConfig": {
+                "tls": "OFF"
+            },
+            "communicationType": "REST"
+        }
+    ],
+    "peer": [
+        {
+            "url": "http://tessera-node1:9101"
+        },
+        {
+            "url": "http://tessera-node2:9102"
+        },
+        {
+            "url": "http://tessera-node3:9103"
+        },
+        {
+            "url": "http://tessera-node4:9104"
+        },
+        {
+            "url": "http://tessera-node5:9105"
+        },
+        {
+            "url": "http://tessera-node6:9106"
+        }
+    ],
+    "keys": {
+        "passwords": [],
+        "keyData": [
+            {
+                "privateKeyPath": "/app/keys/node5.key",
+                "publicKeyPath": "/app/keys/node5.pub"
+            }
+        ]
+    },
+    "alwaysSendTo": []
+}
